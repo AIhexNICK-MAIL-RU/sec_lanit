@@ -1,27 +1,30 @@
 #!/usr/bin/env python3
 """
-AppSec Lab - Hello World Application.
+Hello AppSec World Application
+
+This module demonstrates a modern CLI application using Typer
+for the AppSec laboratory work.
 """
 import typer
 
 def main(
     name: str,
-    lastname: str = typer.Option("", help="User's last name"),
-    formal: bool = typer.Option(False, "--formal", "-f", help="Use formal greeting"),
+    lastname: str = typer.Option("", help="Фамилия пользователя."),
+    formal: bool = typer.Option(False, "--formal", "-f", help="Использовать формальное приветствие."),
 ):
     """
-    Greet the user with a personalized message.
-    (Style: camelCase variables, different comment style)
+    Говорит "Привет" пользователю, опционально используя фамилию и формальный стиль.
+    
+    Args:
+        name: Имя пользователя (обязательный аргумент)
+        lastname: Фамилия пользователя (опциональный)
+        formal: Флаг формального приветствия
     """
-    userLastname = lastname
-    isFormal = formal
-    
-    if isFormal == True:
-        greeting = f"Добрый день, {name} {userLastname}!"
+    if formal:
+        print(f"Добрый день, {name} {lastname}!")
     else:
-        greeting = f"Привет, {name}!"
-    
-    print(greeting)
+        print(f"Привет, {name}!")
 
 if __name__ == "__main__":
+    # Запуск Typer CLI приложения
     typer.run(main)
