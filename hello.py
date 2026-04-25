@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
-"""
-AppSec Lab - Hello World Application.
-"""
 import typer
 
 def main(
     name: str,
-    lastname: str = typer.Option("", help="User's last name"),
-    formal: bool = typer.Option(False, "--formal", "-f", help="Use formal greeting"),
+    lastname: str = typer.Option("", help="Фамилия пользователя."),
+    formal: bool = typer.Option(False, "--formal", "-f", help="Использовать формальное приветствие."),
 ):
     """
-    Greet the user with a personalized message.
-    (Style: camelCase variables, different comment style)
+    ИЗМЕНЕННЫЙ КОММЕНТАРИЙ В MASTER ВЕТКЕ ДЛЯ КОНФЛИКТА!
+    Этот комментарий отличается от того, что в patch2.
     """
-    userLastname = lastname
-    isFormal = formal
-    
-    if isFormal == True:
-        greeting = f"Добрый день, {name} {userLastname}!"
+    if formal:
+        print(f"Добрый день, {name} {lastname}!")
     else:
-        greeting = f"Привет, {name}!"
-    
-    print(greeting)
+        print(f"Привет, {name}!")
 
 if __name__ == "__main__":
     typer.run(main)
