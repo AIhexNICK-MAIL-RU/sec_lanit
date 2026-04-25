@@ -1,0 +1,4 @@
+[bandit]
+exclude = venv,.venv,env,__pycache__,test,tests,build,dist
+recursive = true
+format = json
