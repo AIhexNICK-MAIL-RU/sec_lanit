@@ -1,19 +1,22 @@
-#!/usr/bin/env python3
 import typer
 
 def main(
     name: str,
-    lastname: str = typer.Option("", help="Фамилия пользователя."),
-    formal: bool = typer.Option(False, "--formal", "-f", help="Использовать формальное приветствие."),
+    lastname: str = typer.Option("", help="User's last name"),
+    formal: bool = typer.Option(False, "--formal", "-f", help="Use formal greeting"),
 ):
     """
-    ИЗМЕНЕННЫЙ КОММЕНТАРИЙ В MASTER ВЕТКЕ ДЛЯ КОНФЛИКТА!
-    Этот комментарий отличается от того, что в patch2.
+    COMBINED: Измененный комментарий из master + camelCase стиль из patch2.
     """
-    if formal:
-        print(f"Добрый день, {name} {lastname}!")
+    userLastname = lastname
+    isFormal = formal
+
+    if isFormal == True:
+        greeting = f"Добрый день, {name} {userLastname}!"
     else:
-        print(f"Привет, {name}!")
+        greeting = f"Привет, {name}!"
+
+    print(greeting)
 
 if __name__ == "__main__":
     typer.run(main)

@@ -1,0 +1,16 @@
+=== Lab 02 Results ===
+Date: Mon Apr 27 19:24:25 UTC 2026
+=== who | wc -l ===
+0
+=== id ===
+uid=1000(vboxuser) gid=1000(vboxuser) groups=1000(vboxuser),27(sudo),122(docker)
+=== whoami ===
+vboxuser
+=== hostnamectl ===
+ Static hostname: appsec-lab
+       Icon name: computer
+      Machine ID: 3663dbf21a8646c8ac9e9394e9432284
+         Boot ID: ad8336ba89c843fdb919dff9378e117b
+Operating System: Ubuntu 25.10
+          Kernel: Linux 6.17.0-22-generic
+    Architecture: arm64
