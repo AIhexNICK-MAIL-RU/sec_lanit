@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Wed Apr 29 16:08:06 2026 as: nmap -sV --script vuln -oN nmapres_new.txt localhost
+test
