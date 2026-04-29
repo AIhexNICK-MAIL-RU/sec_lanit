@@ -1,0 +1,16 @@
+database:
+  host: localhost
+  port: 5432
+  user: admin
+  password: admin123
+  ssl: false
+
+api:
+  key: "AKIAIOSFODNN7EXAMPLE"
+  secret: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+jwt:
+  secret: "my_super_secret_jwt_key_12345"
+
+redis:
+  password: "redis_password_123"

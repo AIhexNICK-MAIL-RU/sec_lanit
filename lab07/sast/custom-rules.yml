@@ -1,0 +1,10 @@
+rules:
+  - id: hardcoded-password
+    patterns:
+      - pattern: $VAR = "..."
+      - metavariable-regex:
+          metavariable: $VAR
+          regex: (?i)(password|passwd|secret|api_key|token)
+    message: "Hardcoded secret in variable '$VAR'"
+    languages: [python]
+    severity: ERROR

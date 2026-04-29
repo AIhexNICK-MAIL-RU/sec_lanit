@@ -1,0 +1,42 @@
+[
+ {
+  "Description": "Sidekiq Secret",
+  "StartLine": 47,
+  "EndLine": 47,
+  "StartColumn": 23,
+  "EndColumn": 75,
+  "Match": "BUNDLE_ENTERPRISE__CONTRIBSYS__COM=cafebabe:deadbeef\"",
+  "Secret": "cafebabe:deadbeef",
+  "File": "README.md",
+  "SymlinkFile": "",
+  "Commit": "2f35261b586e86f7bae2e47b1d9e5da55b4506ff",
+  "Entropy": 2.6098502,
+  "Author": "AI_Nick",
+  "Email": "alittlejoke@mail.ru",
+  "Date": "2026-04-25T00:25:02Z",
+  "Message": "first commit",
+  "Tags": [],
+  "RuleID": "sidekiq-secret",
+  "Fingerprint": "2f35261b586e86f7bae2e47b1d9e5da55b4506ff:README.md:sidekiq-secret:47"
+ },
+ {
+  "Description": "Generic API Key",
+  "StartLine": 574,
+  "EndLine": 575,
+  "StartColumn": 18,
+  "EndColumn": 1,
+  "Match": "PASSWORD=8ae31cacf141669ddfb5da",
+  "Secret": "8ae31cacf141669ddfb5da",
+  "File": "README.md",
+  "SymlinkFile": "",
+  "Commit": "2f35261b586e86f7bae2e47b1d9e5da55b4506ff",
+  "Entropy": 3.5383105,
+  "Author": "AI_Nick",
+  "Email": "alittlejoke@mail.ru",
+  "Date": "2026-04-25T00:25:02Z",
+  "Message": "first commit",
+  "Tags": [],
+  "RuleID": "generic-api-key",
+  "Fingerprint": "2f35261b586e86f7bae2e47b1d9e5da55b4506ff:README.md:generic-api-key:574"
+ }
+]

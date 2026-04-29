@@ -1,0 +1,38 @@
+rules:
+  - id: hardcoded-password
+    pattern-regex: (password|passwd|secret|api_key|token)\s*=\s*["'][^"']+["']
+    message: Hardcoded secret detected
+    languages: [python]
+    severity: ERROR
+
+  - id: sql-injection
+    patterns:
+      - pattern-either:
+          - pattern: |
+              $QUERY = f"... {$VAR} ..."
+          - pattern: |
+              $QUERY = "..." + $VAR + "..."
+      - pattern-either:
+          - pattern: cursor.execute($QUERY)
+          - pattern: cursor.execute($QUERY, ...)
+    message: Possible SQL injection vulnerability
+    languages: [python]
+    severity: ERROR
+
+  - id: command-injection
+    pattern: subprocess.call(... shell=True)
+    message: Command injection vulnerability
+    languages: [python]
+    severity: ERROR
+
+  - id: unsafe-pickle
+    pattern: pickle.loads(...)
+    message: Unsafe deserialization with pickle
+    languages: [python]
+    severity: ERROR
+
+  - id: eval-detected
+    pattern: eval(...)
+    message: Eval execution of untrusted code
+    languages: [python]
+    severity: WARNING

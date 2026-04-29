@@ -1,0 +1,7 @@
+soft-fail: true
+output: json
+framework:
+  - dockerfile
+skip-check:
+  - CKV_DOCKER_9
+  - CKV_DOCKER_10

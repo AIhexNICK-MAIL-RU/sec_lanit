@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:1.25
+    ports:
+      - "8080:80"
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    secrets:
+      - secret_key
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+
+  app:
+    image: python:3.11-slim
+    command: python -m http.server 8000
+    ports:
+      - "8000:8000"
+    user: "1000:1000"
+    read_only: true
+    secrets:
+      - db_password
+      - api_key
+
+  postgres:
+    image: postgres:16
+    secrets:
+      - postgres_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+secrets:
+  secret_key:
+    external: false
+  db_password:
+    external: false
+  api_key:
+    external: false
+  postgres_password:
+    external: false

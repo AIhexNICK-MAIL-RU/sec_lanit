@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  vulnerable-app:
+    build: ./vulnerable-app
+    ports:
+      - "8080:5000"
+    privileged: true
+    environment:
+      - DB_PASSWORD=admin123
+      - API_KEY=sk-1234567890abcdef
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    network_mode: host
